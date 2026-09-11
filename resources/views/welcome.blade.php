@@ -73,6 +73,50 @@
     </div>
 </section>
 
+<!-- SECTION CARROUSEL PUBLICITAIRE (Défilement en temps réel) -->
+<div class="relative w-full overflow-hidden bg-slate-950 py-6 border-b border-slate-800">
+    <div class="flex space-x-6 animate-marquee whitespace-nowrap">
+        <!-- Bloc 1 -->
+        <div class="inline-block w-80 h-48 flex-shrink-0 rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Immobilier 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Bloc 2 -->
+        <div class="inline-block w-80 h-48 flex-shrink-0 rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750" alt="Immobilier 2" class="w-full h-full object-cover">
+        </div>
+        <!-- Bloc 3 -->
+        <div class="inline-block w-80 h-48 flex-shrink-0 rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9" alt="Immobilier 3" class="w-full h-full object-cover">
+        </div>
+        <!-- Bloc 4 -->
+        <div class="inline-block w-80 h-48 flex-shrink-0 rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" alt="Immobilier 4" class="w-full h-full object-cover">
+        </div>
+        <!-- Duplication pour un effet de boucle infini fluide -->
+        <div class="inline-block w-80 h-48 flex-shrink-0 rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Immobilier 1" class="w-full h-full object-cover">
+        </div>
+        <div class="inline-block w-80 h-48 flex-shrink-0 rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750" alt="Immobilier 2" class="w-full h-full object-cover">
+        </div>
+    </div>
+</div>
+
+<style>
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+}
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+</style>
+
 <!-- SECTION LE PROBLÈME / POURQUOI -->
 <section id="pourquoi" class="py-20 bg-slate-50 border-b border-slate-200 text-slate-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
