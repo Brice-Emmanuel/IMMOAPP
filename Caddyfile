@@ -4,6 +4,6 @@
 
 :{$PORT} {
     root * /app/public
-    php_fastcgi 127.0.0.1:6000
+    php_server
     file_server
 }
