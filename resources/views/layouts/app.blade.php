@@ -180,7 +180,7 @@
                 <h4 class="text-white font-bold text-sm mb-3">Contact</h4>
                 <ul class="space-y-2 text-xs text-gray-400">
                     <li><i class="fa-solid fa-location-dot text-orange-500 mr-2"></i> Douala, Cameroun</li>
-                    <li><i class="fa-solid fa-envelope text-orange-500 mr-2"></i> contact@immoapp.com</li>
+                    <li><i class="fa-solid fa-envelope text-orange-500 mr-2"></i> emmanuelnyamsi721@gmail.com</li>
                 </ul>
             </div>
         </div>
