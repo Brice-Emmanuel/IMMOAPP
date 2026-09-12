@@ -1,9 +1,9 @@
 {
-    frankenphp
-    order php_server before file_server
+    # Global options
 }
 
 :{$PORT} {
-    root * public
-    php_server
+    root * /app/public
+    php_fastcgi 127.0.0.1:6000
+    file_server
 }

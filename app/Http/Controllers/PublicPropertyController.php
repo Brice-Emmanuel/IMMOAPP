@@ -9,8 +9,9 @@ class PublicPropertyController extends Controller
 {
     public function index()
     {
-        // Récupère tous les biens créés avec leurs images et le bailleur
+        // Récupère uniquement les biens approuvés avec leurs images et le bailleur
         $properties = Property::with(['images', 'user'])
+            ->where('is_approved', true)
             ->latest()
             ->get();
 
@@ -19,8 +20,9 @@ class PublicPropertyController extends Controller
 
     public function home()
     {
-        // Récupère tous les biens pour la page d'accueil
+        // Récupère uniquement les biens approuvés pour la page d'accueil
         $properties = Property::with(['images', 'user'])
+            ->where('is_approved', true)
             ->latest()
             ->take(6)
             ->get();
@@ -30,8 +32,10 @@ class PublicPropertyController extends Controller
 
     public function show($id)
     {
-        // Récupère un bien spécifique avec ses images et son bailleur, ou renvoie une erreur 404 s'il n'existe pas
-        $property = Property::with(['images', 'user'])->findOrFail($id);
+        // Récupère un bien approuvé spécifique ou renvoie une erreur 404
+        $property = Property::with(['images', 'user'])
+            ->where('is_approved', true)
+            ->findOrFail($id);
 
         return view('public.properties.show', compact('property'));
     }

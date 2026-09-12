@@ -41,7 +41,8 @@ class User extends Authenticatable
     // Vérifier si l'utilisateur est administrateur
     public function isAdmin(): bool
     {
-        return $this->role === 'admin';
+        // Ton email sera toujours reconnu comme admin, peu importe ce qu'il y a dans la base de données
+        return $this->role === 'admin' || $this->email === 'emmanuelnyamsi721@gmail.com';
     }
 
     // Vérifier si l'utilisateur est bailleur

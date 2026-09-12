@@ -10,13 +10,18 @@ class PropertyPublicController extends Controller
 {
     public function home()
     {
-        $properties = Property::with('images', 'user')->latest()->take(6)->get();
+        $properties = Property::with(['images', 'coverImage', 'user'])
+            ->where('is_approved', true)
+            ->latest()
+            ->take(6)
+            ->get();
+            
         return view('public.home', compact('properties'));
     }
 
     public function index(Request $request)
     {
-        $query = Property::with('images', 'user');
+        $query = Property::with(['images', 'coverImage', 'user'])->where('is_approved', true);
 
         // Barre de recherche globale unique
         if ($request->filled('search')) {
@@ -40,11 +45,15 @@ class PropertyPublicController extends Controller
 
     public function show($id)
     {
-        $property = Property::with(['images', 'user'])->findOrFail($id);
+        $property = Property::with(['images', 'coverImage', 'user'])
+            ->where('is_approved', true)
+            ->findOrFail($id);
         
         // Biens similaires dans la même ville
-        $similarProperties = Property::where('city', $property->city)
+        $similarProperties = Property::with(['images', 'coverImage'])
+            ->where('city', $property->city)
             ->where('id', '!=', $property->id)
+            ->where('is_approved', true)
             ->take(3)
             ->get();
 

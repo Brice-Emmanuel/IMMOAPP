@@ -11,15 +11,15 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
             <span class="text-xs font-semibold text-gray-400 uppercase">Annonces à Valider</span>
-            <p class="text-3xl font-black text-orange-500 mt-2">0</p>
+            <p class="text-3xl font-black text-orange-500 mt-2">{{ $pendingPropertiesCount ?? 0 }}</p>
         </div>
         <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
             <span class="text-xs font-semibold text-gray-400 uppercase">Comptes Bailleurs</span>
-            <p class="text-3xl font-black text-gray-900 mt-2">0</p>
+            <p class="text-3xl font-black text-gray-900 mt-2">{{ $landlordsCount ?? 0 }}</p>
         </div>
         <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
             <span class="text-xs font-semibold text-gray-400 uppercase">CNI en attente</span>
-            <p class="text-3xl font-black text-blue-600 mt-2">0</p>
+            <p class="text-3xl font-black text-blue-600 mt-2">{{ $pendingCniCount ?? 0 }}</p>
         </div>
     </div>
 
@@ -34,8 +34,8 @@
 
         <a href="{{ route('admin.users.index') }}" class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-orange-500 transition-all flex items-center justify-between">
             <div>
-                <h3 class="font-bold text-gray-900 text-lg">Vérification des CNI</h3>
-                <p class="text-xs text-gray-500 mt-1">Valider les pièces d'identité des utilisateurs.</p>
+                <h3 class="font-bold text-gray-900 text-lg">Gestion des Bailleurs</h3>
+                <p class="text-xs text-gray-500 mt-1">Consulter la liste des comptes bailleurs enregistrés.</p>
             </div>
             <i class="fa-solid fa-chevron-right text-gray-400"></i>
         </a>
